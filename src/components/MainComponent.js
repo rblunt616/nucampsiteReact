@@ -4,6 +4,7 @@ import CampsiteInfo from "./CampsiteInfoComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
+import About from "./AboutComponent";
 import Contact from "./ContactComponent";
 import { COMMENTS } from "../shared/comments";
 import { PARTNERS } from "../shared/partners";
@@ -63,6 +64,12 @@ class Main extends Component {
             render={() => <Directory campsites={this.state.campsites} />}
           />
           <Route path="/directory/:campsiteId" component={CampsiteWithId} />
+          <Route
+            exact
+            path="/aboutus"
+            render={() => <About partners={this.state.partners} />}
+          />
+
           <Route exact path="/contactus" component={Contact} />
           <Redirect to="/home" />
         </Switch>
